@@ -1,16 +1,5 @@
-//SPDX-License-Identifier: UNLICENSED
-//SPDX-License-Identifier: UNLICENSED
 // SPDX-License-Identifier: MIT
-// OpenZeppelin Contracts (last updated v5.0.0) (utils/Strings.sol)
-
-// SPDX-License-Identifier: MIT
-// OpenZeppelin Contracts (last updated v5.0.0) (utils/math/Math.sol)
-
-// SPDX-License-Identifier: MIT
-// OpenZeppelin Contracts (last updated v5.0.0) (utils/math/SignedMath.sol)
-
 pragma solidity ^0.8.20;
-
 /**
  * @dev Standard signed math utilities missing in the Solidity language.
  */
@@ -49,8 +38,6 @@ library SignedMath {
         }
     }
 }
-
-pragma solidity ^0.8.20;
 
 /**
  * @dev Standard math utilities missing in the Solidity language.
@@ -462,10 +449,6 @@ library Math {
         return uint8(rounding) % 2 == 1;
     }
 }
-pragma solidity ^0.8.20;
-
-import {Math} from "./math/Math.sol";
-import {SignedMath} from "./math/SignedMath.sol";
 
 /**
  * @dev String operations.
@@ -553,7 +536,6 @@ library Strings {
         return bytes(a).length == bytes(b).length && keccak256(bytes(a)) == keccak256(bytes(b));
     }
 }
-pragma solidity ^0.8.0;
 
 abstract contract Ownable {
     event OwnershipTransferred(address indexed user, address indexed newOwner);
@@ -947,18 +929,13 @@ abstract contract ERC404 is Ownable {
     }
 }
 
-pragma solidity ^0.8.0;
-
-import "./ERC404/ERC404.sol";
-import "@openzeppelin/contracts/utils/Strings.sol";
-
 contract Pandora is ERC404 {
     string public dataURI;
     string public baseTokenURI;
 
     constructor(
         address _owner
-    ) ERC404("Pandora", "PANDORA", 18, 10000, _owner) {
+    ) ERC404("ANGEL", "ANGEL", 18, 10000, _owner) {
         balanceOf[_owner] = 10000 * 10 ** 18;
     }
 
